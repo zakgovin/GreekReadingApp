@@ -1,11 +1,11 @@
 {
   "packageName": "com.greekreading.app",
-  "versionCode": 2,
-  "versionName": "0.1.1",
+  "versionCode": 3,
+  "versionName": "0.1.2",
   "minSdk": 26,
   "file": "GreekReadingApp.apk",
-  "sizeBytes": 77774647,
-  "sha256": "eb07efbb3da36a84a7a76973a257a8b41b0f087a9653c61b2b6644184c6c523d",
+  "sizeBytes": 77913755,
+  "sha256": "dcebe7b4191e7cdd1c11676b12277c7c83c4a1552917661cf6080b427012d5dc",
   "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
-  "preparedAt": "2026-10-30T22:26:26+03:00"
+  "preparedAt": "2026-10-30T23:42:23+03:00"
 }
