@@ -8,10 +8,10 @@
 
 | Устройство | APK | Размер |
 | --- | --- | ---: |
-| Современный телефон с 64-битным Android на ARM | [ARM64](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-arm64-v8a.apk) | 30,59 МБ |
-| Телефон с 32-битным Android на ARM | [ARM32](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-armeabi-v7a.apk) | 25,84 МБ |
-| Эмулятор или Android на x86 | [x86](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-x86.apk) | 31,49 МБ |
-| Эмулятор или Android на x86_64 | [x86_64](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-x86_64.apk) | 31,61 МБ |
+| Современный телефон с 64-битным Android на ARM | [ARM64](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-arm64-v8a.apk) | 30,59 МБ |
+| Телефон с 32-битным Android на ARM | [ARM32](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-armeabi-v7a.apk) | 25,84 МБ |
+| Эмулятор или Android на x86 | [x86](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-x86.apk) | 31,49 МБ |
+| Эмулятор или Android на x86_64 | [x86_64](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-x86_64.apk) | 31,61 МБ |
 
 Для большинства современных телефонов подходит ARM64. Если телефон использует
 32-битный Android, выбирайте ARM32. Размеры указаны в десятичных МБ.
