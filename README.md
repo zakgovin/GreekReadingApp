@@ -1,4 +1,32 @@
-# Греческая читалка — восстановление 0.1.4
+# Греческая читалка
+
+Текущая сборка **0.1.5 / versionCode 6** выпускается отдельными APK для каждой
+архитектуры. Языковые модели перевода докачиваются по кнопке; книгу и литературный
+русский перевод можно читать без загрузки моделей.
+
+## Скачать приложение
+
+| Устройство | APK | Размер |
+| --- | --- | ---: |
+| Современный телефон с 64-битным Android на ARM | [ARM64](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-arm64-v8a.apk) | 30,59 МБ |
+| Телефон с 32-битным Android на ARM | [ARM32](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-armeabi-v7a.apk) | 25,84 МБ |
+| Эмулятор или Android на x86 | [x86](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-x86.apk) | 31,49 МБ |
+| Эмулятор или Android на x86_64 | [x86_64](https://github.com/zakgovin/GreekReadingApp/releases/download/android-6/GreekReadingApp-0.1.5-x86_64.apk) | 31,61 МБ |
+
+Для большинства современных телефонов подходит ARM64. Если телефон использует
+32-битный Android, выбирайте ARM32. Размеры указаны в десятичных МБ.
+Все варианты подписаны прежним ключом и обновляют совместимую установку 0.1.4
+без удаления приложения. Полный список файлов и SHA-256 — в
+[выпуске android-6](https://github.com/zakgovin/GreekReadingApp/releases/tag/android-6).
+
+Для включения автоматического перевода нажмите «Скачать модели» в карточке
+слова или в настройках. Потребуется интернет и несколько десятков
+МБ дополнительно. Во время загрузки можно продолжать читать. После загрузки
+перевод работает офлайн; повторно скачиваются только отсутствующие модели.
+
+Состав вариантов и проверка доставки описаны в `docs/DELIVERY.md`.
+
+## Основа проекта
 
 Проект восстановлен из APK: код приложения доступен в редактируемом smali,
 ресурсы и данные извлечены, обратная сборка и подпись проверены.
@@ -39,7 +67,7 @@ python3 scripts/project.py validate
 Сборка без подписи:
 
 ```sh
-python3 scripts/project.py build --unsigned
+python3 scripts/project.py build --abi arm64-v8a --unsigned
 ```
 
 При первом запуске скрипт скачивает закреплённые версии исходного APK и Apktool
@@ -51,6 +79,7 @@ python3 scripts/project.py build --unsigned
 
 ```sh
 python3 scripts/project.py build --unsigned \
+  --abi arm64-v8a \
   --apk /path/to/GreekReadingApp.apk \
   --apktool /path/to/apktool_3.0.3.jar
 ```
@@ -58,12 +87,22 @@ python3 scripts/project.py build --unsigned \
 Подписанная сборка с прежним ключом:
 
 ```sh
-python3 scripts/project.py build \
+python3 scripts/project.py build-all \
   --sdk /path/to/android-sdk \
   --keystore /private/path/to/debug.keystore
 ```
 
-Результат: `build/GreekReadingApp-recovered.apk`.
+Результат: четыре файла `dist/GreekReadingApp-0.1.5-<архитектура>.apk`,
+`dist/manifest.json`, отчёты по вариантам и `dist/SHA256SUMS`.
+Команда `build` собирает один вариант, по умолчанию ARM64; `build-all` — все четыре.
+Проверки упаковки запускаются командой:
+
+```sh
+python3 -m unittest discover -s scripts -p test_abi_packaging.py -v
+```
+
+Настройки текущего выпуска — в `release.json`; сведения об исходном APK 0.1.4
+сохраняются отдельно в `recovery.json`.
 Ключ не входит в проект и не должен попадать в Git.
 В текущей среде сохранился прежний ключ:
 `/workspace/.greek-tools/android-user/debug.keystore`.
@@ -71,7 +110,7 @@ python3 scripts/project.py build \
 Пароли прежнего отладочного ключа — стандартные Android; для другого значения
 скрипт принимает `RECOVERY_STORE_PASS` и `RECOVERY_KEY_PASS` из окружения.
 
-## Что уже проверено
+## Проверка исходного восстановления 0.1.4
 
 - Все 654 smali-класса после сборки и повторного разбора совпали с восстановленными файлами.
 - Сохранены идентификаторы ресурсов и 12 985 записей их значений с учётом изменений формата упаковки.
@@ -79,7 +118,8 @@ python3 scripts/project.py build \
 - Подпись APK корректна, сертификат прежний, выравнивание native-библиотек 16 КиБ проверено.
 - Данные книги и диапазоны сопоставлений проверены: ошибок нет.
 
-Запуск пересобранного APK на устройстве не проверен.
+Эти проверки относятся к исходному восстановлению 0.1.4. Проверки версии 0.1.5
+и её APK по архитектурам описаны в `docs/DELIVERY.md`.
 Содержимое телефона — личный словарь и прогресс чтения — не входит в APK
 и из установочного файла не восстанавливается.
 

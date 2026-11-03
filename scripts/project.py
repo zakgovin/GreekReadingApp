@@ -18,7 +18,16 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / "apktool-project"
 CACHE = ROOT / ".cache"
 BUILD = ROOT / "build"
+DIST = ROOT / "dist"
 SPEC = json.loads((ROOT / "recovery.json").read_text(encoding="utf-8"))
+RELEASE = json.loads((ROOT / "release.json").read_text(encoding="utf-8"))
+ABIS = tuple(RELEASE["abis"])
+ELF_TARGETS = {
+    "arm64-v8a": (2, 183),
+    "armeabi-v7a": (1, 40),
+    "x86": (1, 3),
+    "x86_64": (2, 62),
+}
 
 
 def digest(path: Path) -> str:
@@ -166,14 +175,82 @@ def run(command: list[str | Path], env: dict | None = None) -> subprocess.Comple
     return subprocess.run([str(item) for item in command], cwd=ROOT, env=env, check=True)
 
 
-def build(args: argparse.Namespace) -> Path:
+def validate_version() -> None:
+    config = (PROJECT / "apktool.yml").read_text(encoding="utf-8")
+    build_config = (PROJECT / "smali_classes5/com/greekreading/app/BuildConfig.smali").read_text(encoding="utf-8")
+    expected = RELEASE["versionName"], RELEASE["versionCode"]
+    name = re.search(r"^  versionName: (.+)$", config, re.MULTILINE)
+    code = re.search(r"^  versionCode: (\d+)$", config, re.MULTILINE)
+    if not name or not code or (name.group(1), int(code.group(1))) != expected:
+        raise ValueError("apktool.yml version differs from release.json")
+    if f'VERSION_NAME:Ljava/lang/String; = "{expected[0]}"' not in build_config:
+        raise ValueError("BuildConfig VERSION_NAME differs from release.json")
+    if f"VERSION_CODE:I = {hex(expected[1])}" not in build_config:
+        raise ValueError("BuildConfig VERSION_CODE differs from release.json")
+
+
+def inspect_native(apk: Path, abi: str) -> dict[str, str]:
+    """Reject mixed ABIs, missing translator and libraries mislabeled for another CPU."""
+    expected_class, expected_machine = ELF_TARGETS[abi]
+    libraries = {}
+    with zipfile.ZipFile(apk) as archive:
+        for entry in archive.infolist():
+            if not entry.filename.startswith("lib/") or entry.is_dir():
+                continue
+            parts = Path(entry.filename).parts
+            if len(parts) != 3 or parts[1] != abi or not parts[2].endswith(".so"):
+                raise ValueError(f"Unexpected native entry for {abi}: {entry.filename}")
+            data = archive.read(entry)
+            if len(data) < 20 or data[:4] != b"\x7fELF" or data[5] != 1:
+                raise ValueError(f"Invalid little-endian ELF: {entry.filename}")
+            if (data[4], int.from_bytes(data[18:20], "little")) != (expected_class, expected_machine):
+                raise ValueError(f"ELF CPU differs from {abi}: {entry.filename}")
+            libraries[entry.filename] = hashlib.sha256(data).hexdigest()
+    if f"lib/{abi}/libtranslate_jni.so" not in libraries:
+        raise ValueError(f"Translation engine missing for {abi}")
+    return libraries
+
+
+def filter_abi(source: Path, target: Path, abi: str) -> dict[str, str]:
+    """Create a standalone APK with exactly one architecture, preserving all other payloads."""
+    if source.resolve() == target.resolve():
+        raise ValueError("ABI filtering needs distinct source and target paths")
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(source) as archive, zipfile.ZipFile(target, "w") as output:
+        for entry in archive.infolist():
+            parts = Path(entry.filename).parts
+            if len(parts) >= 2 and parts[0] == "lib" and parts[1] != abi:
+                continue
+            output.writestr(entry, archive.read(entry))
+    libraries = inspect_native(target, abi)
+    with zipfile.ZipFile(source) as before, zipfile.ZipFile(target) as after:
+        expected = {name for name in before.namelist()
+                    if not name.startswith("lib/") or name == "lib/" or name.startswith(f"lib/{abi}/")}
+        if set(after.namelist()) != expected:
+            raise ValueError(f"ABI filter lost or added entries for {abi}")
+        for name in expected:
+            if before.read(name) != after.read(name):
+                raise ValueError(f"ABI filter changed payload: {name}")
+    return libraries
+
+
+def assemble(args: argparse.Namespace) -> tuple[Path, Path]:
     validation()
+    validate_version()
     original = original_apk(args.apk)
     restore_runtime(original)
     jar = apktool(args.apktool)
     BUILD.mkdir(exist_ok=True)
-    unsigned = BUILD / "GreekReadingApp-unsigned.apk"
-    run(["java", "-jar", jar, "b", "--frame-path", CACHE / "framework", "--output", unsigned, PROJECT])
+    unsigned = BUILD / f"GreekReadingApp-{RELEASE['versionName']}-all-abis-unsigned.apk"
+    # Apktool's incremental resource cache does not reliably invalidate on versionInfo changes.
+    run(["java", "-jar", jar, "b", "--force", "--frame-path", CACHE / "framework", "--output", unsigned, PROJECT])
+    return unsigned, original
+
+
+def build_variant(args: argparse.Namespace, source: Path, original: Path, abi: str) -> Path:
+    name = f"GreekReadingApp-{RELEASE['versionName']}-{abi}"
+    unsigned = BUILD / f"{name}-unsigned.apk"
+    libraries = filter_abi(source, unsigned, abi)
     if args.unsigned:
         print(f"Unsigned APK: {unsigned}")
         return unsigned
@@ -184,14 +261,15 @@ def build(args: argparse.Namespace) -> Path:
     if not key.is_file():
         raise ValueError(f"Keystore not found: {key}")
     align, signer = sdk_tools(args.sdk)
-    aligned = BUILD / "GreekReadingApp-aligned.apk"
-    signed = BUILD / "GreekReadingApp-recovered.apk"
+    aligned = BUILD / f"{name}-aligned.apk"
+    signed = BUILD / f"{name}-signed.apk"
     run([align, "-f", "-P", "16", "4", unsigned, aligned])
     environment = os.environ.copy()
     environment.setdefault("RECOVERY_STORE_PASS", "android")
     environment.setdefault("RECOVERY_KEY_PASS", "android")
     run([signer, "sign", "--ks", key, "--ks-key-alias", "androiddebugkey",
-         "--ks-pass", "env:RECOVERY_STORE_PASS", "--key-pass", "env:RECOVERY_KEY_PASS", "--out", signed, aligned], environment)
+         "--ks-pass", "env:RECOVERY_STORE_PASS", "--key-pass", "env:RECOVERY_KEY_PASS",
+         "--v4-signing-enabled", "false", "--out", signed, aligned], environment)
     result = subprocess.run([str(signer), "verify", "--verbose", "--print-certs", str(signed)],
                             text=True, capture_output=True, check=True)
     print(result.stdout)
@@ -199,20 +277,55 @@ def build(args: argparse.Namespace) -> Path:
     if not match or match.group(1) != SPEC["signerCertificateSha256"]:
         raise ValueError("Certificate differs from 0.1.4; this APK cannot update the original installation.")
     run([align, "-c", "-P", "16", "4", signed])
+    if inspect_native(signed, abi) != libraries:
+        raise ValueError("Signing/alignment changed the native payload")
+    aapt = align.parent / "aapt"
+    if aapt.is_file():
+        metadata = subprocess.run([str(aapt), "dump", "badging", str(signed)],
+                                  capture_output=True, text=True, check=True).stdout
+        if f"name='{SPEC['package']}' versionCode='{RELEASE['versionCode']}' versionName='{RELEASE['versionName']}'" not in metadata:
+            raise ValueError("Final APK package/version mismatch")
+        if f"native-code: '{abi}'\n" not in metadata:
+            raise ValueError("Final Android manifest reports the wrong ABI")
+    DIST.mkdir(exist_ok=True)
+    destination = DIST / f"{name}.apk"
+    signed.replace(destination)
     report = {
-        "apk": signed.name, "sha256": digest(signed),
+        "apk": destination.name, "versionName": RELEASE["versionName"],
+        "versionCode": RELEASE["versionCode"], "abi": abi,
+        "sizeBytes": destination.stat().st_size, "sha256": digest(destination),
+        "originalSizeBytes": original.stat().st_size,
         "originSha256": SPEC["origin"]["sha256"],
         "signerCertificateSha256": match.group(1), "signatureVerified": True,
         "alignment16KiBVerified": True, "deviceLaunchTested": False,
+        "nativeLibraries": libraries, "nativeElfArchitectureVerified": True,
+        "nonNativePayloadPreservedDuringAbiFiltering": True,
+        "translationModels": RELEASE["translationModels"],
     }
-    (BUILD / "verification.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print(f"Signed APK: {signed}")
-    return signed
+    (DIST / f"{name}.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(f"Signed APK: {destination} ({destination.stat().st_size / 1_000_000:.2f} MB)")
+    return destination
+
+
+def build(args: argparse.Namespace) -> list[Path]:
+    source, original = assemble(args)
+    abis = ABIS if args.command == "build-all" else (args.abi,)
+    results = [build_variant(args, source, original, abi) for abi in abis]
+    if not args.unsigned:
+        reports = [json.loads(path.with_suffix(".json").read_text(encoding="utf-8")) for path in results]
+        (DIST / "manifest.json").write_text(json.dumps({
+            "versionName": RELEASE["versionName"], "versionCode": RELEASE["versionCode"],
+            "package": SPEC["package"], "variants": reports,
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (DIST / "SHA256SUMS").write_text("".join(f"{digest(path)}  {path.name}\n" for path in results), encoding="utf-8")
+    return results
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=["validate", "bootstrap", "build"])
+    parser.add_argument("command", choices=["validate", "bootstrap", "build", "build-all"])
+    parser.add_argument("--abi", choices=ABIS, default=RELEASE["defaultAbi"],
+                        help="Architecture for build (default: arm64-v8a); build-all creates all four standalone APKs")
     parser.add_argument("--apk", help="Original 0.1.4 APK; otherwise download the pinned public copy")
     parser.add_argument("--apktool", help="Existing Apktool 3.0.3 JAR; otherwise download and verify it")
     parser.add_argument("--sdk", help="Android SDK root")

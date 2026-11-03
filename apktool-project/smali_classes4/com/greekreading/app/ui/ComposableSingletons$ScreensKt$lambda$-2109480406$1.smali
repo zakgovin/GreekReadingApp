@@ -159,7 +159,7 @@
 
     const v27, 0x1fffe
 
-    const-string v3, "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c"
+    const-string v3, "\u0421\u043a\u0430\u0447\u0430\u0442\u044c \u043c\u043e\u0434\u0435\u043b\u0438"
 
     const/4 v4, 0x0
 

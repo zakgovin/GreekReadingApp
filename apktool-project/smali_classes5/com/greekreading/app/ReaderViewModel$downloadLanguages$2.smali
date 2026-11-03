@@ -436,7 +436,7 @@
     :cond_2
     iget-object v0, v1, Lcom/greekreading/app/ReaderViewModel$downloadLanguages$2;->this$0:Lcom/greekreading/app/ReaderViewModel;
 
-    const-string v3, "\u042f\u0437\u044b\u043a\u0438 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u044b. \u041f\u0435\u0440\u0435\u0432\u043e\u0434 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0431\u0435\u0437 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0430."
+    const-string v3, "\u041c\u043e\u0434\u0435\u043b\u0438 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u044b. \u041f\u0435\u0440\u0435\u0432\u043e\u0434 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d \u0431\u0435\u0437 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0430."
 
     invoke-virtual {v0, v3}, Lcom/greekreading/app/ReaderViewModel;->showMessage(Ljava/lang/String;)V
     :try_end_1
