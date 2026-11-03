@@ -1,25 +1,14 @@
-# Греческая читалка — установочные файлы
+# Установочные файлы GreekReadingApp
 
-Текущая версия: **0.1.5 / versionCode 6**.
+Текущая версия: **0.1.6 / versionCode 7**. Для большинства телефонов подходит ARM64.
 
-Каждый APK устанавливается самостоятельно. Выберите подходящую архитектуру:
+| ABI | APK | Размер |
+| --- | --- | ---: |
+| arm64-v8a | [Скачать](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.6/GreekReadingApp-0.1.6-arm64-v8a.apk) | 30.61 МБ |
+| armeabi-v7a | [Скачать](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.6/GreekReadingApp-0.1.6-armeabi-v7a.apk) | 25.85 МБ |
+| x86 | [Скачать](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.6/GreekReadingApp-0.1.6-x86.apk) | 31.51 МБ |
+| x86_64 | [Скачать](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.6/GreekReadingApp-0.1.6-x86_64.apk) | 31.62 МБ |
 
-| Устройство | Файл |
-| --- | --- |
-| Большинство современных телефонов, 64-битный Android на ARM | [ARM64 — 30,59 МБ](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.5/GreekReadingApp-0.1.5-arm64-v8a.apk) |
-| Телефоны с 32-битным Android на ARM | [ARM32 — 25,84 МБ](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.5/GreekReadingApp-0.1.5-armeabi-v7a.apk) |
-| Эмуляторы / Android x86 | [x86 — 31,49 МБ](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.5/GreekReadingApp-0.1.5-x86.apk) |
-| Эмуляторы / Android x86_64 | [x86_64 — 31,61 МБ](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/android-builds/releases/0.1.5/GreekReadingApp-0.1.5-x86_64.apk) |
+APK подписаны прежним ключом, содержат одну архитектуру. Языковые модели загружаются отдельно по кнопке. Исторические версии сохранены в releases/.
 
-[Описание выпуска](https://github.com/zakgovin/GreekReadingApp/releases/tag/android-6) ·
-[SHA-256](releases/0.1.5/SHA256SUMS) · [Отчёт](releases/0.1.5/manifest.json)
-
-Модели греческого и русского докачиваются по кнопке в приложении. Книга и готовый
-литературный перевод доступны без моделей. Новые тексты в 0.1.5 не добавлялись.
-
-Устанавливайте поверх прежней версии без удаления приложения: ключ подписи и
-имя пакета сохранены. Файл `GreekReadingApp.apk` в корне этой ветки относится
-к прежней универсальной сборке 0.1.4.
-
-Исходный восстановленный проект находится в ветке
-[recovery/apk-0.1.4](https://github.com/zakgovin/GreekReadingApp/tree/recovery/apk-0.1.4).
+[Исходники и работа над приложением](https://github.com/zakgovin/GreekReadingApp/tree/recovery/apk-0.1.4).

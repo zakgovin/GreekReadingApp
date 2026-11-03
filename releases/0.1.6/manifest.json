@@ -1,0 +1,142 @@
+{
+  "versionName": "0.1.6",
+  "versionCode": 7,
+  "package": "com.greekreading.app",
+  "variants": [
+    {
+      "apk": "GreekReadingApp-0.1.6-arm64-v8a.apk",
+      "versionName": "0.1.6",
+      "versionCode": 7,
+      "abi": "arm64-v8a",
+      "sizeBytes": 30608447,
+      "sha256": "0cc1a4197e5f8838d6c1a614185aa21eb7c90094c0491eddba902b1fa7a87f15",
+      "originalSizeBytes": 78298390,
+      "originSha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+      "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
+      "signatureVerified": true,
+      "alignment16KiBVerified": true,
+      "deviceLaunchTested": false,
+      "nativeLibraries": {
+        "lib/arm64-v8a/libtranslate_jni.so": "35b3d0366291347e3f25e80e809ee398d716aea49cd03278007fedd526a1496f",
+        "lib/arm64-v8a/libdatastore_shared_counter.so": "d3e48717c9aa147e0ab21063ba0e8e0211cabf8bf40b222640829519edbf58e1",
+        "lib/arm64-v8a/libandroidx.graphics.path.so": "41e9a793c43a0f4fddb19e33f346bace464f30f888ba7b9eaf96294ea115bfb6"
+      },
+      "nativeElfArchitectureVerified": true,
+      "nonNativePayloadPreservedDuringAbiFiltering": true,
+      "translationModels": {
+        "languages": [
+          "el",
+          "ru"
+        ],
+        "bundled": false,
+        "download": "explicit-user-action",
+        "requiredForReading": false,
+        "requiredForLiteraryTranslation": false
+      }
+    },
+    {
+      "apk": "GreekReadingApp-0.1.6-armeabi-v7a.apk",
+      "versionName": "0.1.6",
+      "versionCode": 7,
+      "abi": "armeabi-v7a",
+      "sizeBytes": 25852997,
+      "sha256": "58f67344bc46c6009d28cc3fb5d63a85de0d99804a75e935e9dcb154ed201d75",
+      "originalSizeBytes": 78298390,
+      "originSha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+      "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
+      "signatureVerified": true,
+      "alignment16KiBVerified": true,
+      "deviceLaunchTested": false,
+      "nativeLibraries": {
+        "lib/armeabi-v7a/libtranslate_jni.so": "cdf803c7a17cadf5f53314365dd3c999746d98c510863c636de62c7acd8cb016",
+        "lib/armeabi-v7a/libdatastore_shared_counter.so": "716c5d8d2cac8ca0edf65da8f139c7886b726ac79d542a14edeb94994ba6d3dc",
+        "lib/armeabi-v7a/libandroidx.graphics.path.so": "41399eba6fc2a60f6f14642375c1824f3cf25eb8fec7397d753730a3ceda3e2b"
+      },
+      "nativeElfArchitectureVerified": true,
+      "nonNativePayloadPreservedDuringAbiFiltering": true,
+      "translationModels": {
+        "languages": [
+          "el",
+          "ru"
+        ],
+        "bundled": false,
+        "download": "explicit-user-action",
+        "requiredForReading": false,
+        "requiredForLiteraryTranslation": false
+      }
+    },
+    {
+      "apk": "GreekReadingApp-0.1.6-x86.apk",
+      "versionName": "0.1.6",
+      "versionCode": 7,
+      "abi": "x86",
+      "sizeBytes": 31505453,
+      "sha256": "a43aeec3a443ea77020f2d112936a160ea25b5db23621e4e346d7e7c1186a0d3",
+      "originalSizeBytes": 78298390,
+      "originSha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+      "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
+      "signatureVerified": true,
+      "alignment16KiBVerified": true,
+      "deviceLaunchTested": true,
+      "nativeLibraries": {
+        "lib/x86/libtranslate_jni.so": "8501cf6c07570a276539399d2e63b7f3f9f46714b33607599a28ab6b3f33878e",
+        "lib/x86/libdatastore_shared_counter.so": "cd4a1649e2c8350703146f94a6ee2bf4c3c8c9f172159f805b61a4a2abdf0659",
+        "lib/x86/libandroidx.graphics.path.so": "eb0570b41fd3bff25d8204a967c03bd7550719e768b791f680cc40cbe35f29af"
+      },
+      "nativeElfArchitectureVerified": true,
+      "nonNativePayloadPreservedDuringAbiFiltering": true,
+      "translationModels": {
+        "languages": [
+          "el",
+          "ru"
+        ],
+        "bundled": false,
+        "download": "explicit-user-action",
+        "requiredForReading": false,
+        "requiredForLiteraryTranslation": false
+      },
+      "deviceTest": {
+        "androidApi": 28,
+        "emulator": true,
+        "compactTranslation": true,
+        "swipeExpansion": true,
+        "swipeCollapse": true,
+        "offlineLiteraryTranslation": true,
+        "wordSave": true,
+        "outsideTapDismiss": true,
+        "physicalDeviceTested": false
+      }
+    },
+    {
+      "apk": "GreekReadingApp-0.1.6-x86_64.apk",
+      "versionName": "0.1.6",
+      "versionCode": 7,
+      "abi": "x86_64",
+      "sizeBytes": 31624246,
+      "sha256": "0622a0071b386a7bb210a255ff7778a345a8631b2690aa3ed3277cd0421a85a1",
+      "originalSizeBytes": 78298390,
+      "originSha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+      "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
+      "signatureVerified": true,
+      "alignment16KiBVerified": true,
+      "deviceLaunchTested": false,
+      "nativeLibraries": {
+        "lib/x86_64/libtranslate_jni.so": "d7e1b7be14a5cd2c20331c9a511efb3e98b777347abf7eb9bce9166fcb246975",
+        "lib/x86_64/libdatastore_shared_counter.so": "fb6c9208988c49ae94943bc3236fa763ba584722e044fa4ea9a12d2941027105",
+        "lib/x86_64/libandroidx.graphics.path.so": "4e56c996f13670e70082658de7880c4020eabf4f25e43387f88ed78a713fc9f0"
+      },
+      "nativeElfArchitectureVerified": true,
+      "nonNativePayloadPreservedDuringAbiFiltering": true,
+      "translationModels": {
+        "languages": [
+          "el",
+          "ru"
+        ],
+        "bundled": false,
+        "download": "explicit-user-action",
+        "requiredForReading": false,
+        "requiredForLiteraryTranslation": false
+      }
+    }
+  ]
+}
