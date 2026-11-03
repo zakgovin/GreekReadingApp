@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "package": "com.greekreading.app",
+  "versionName": "0.1.4",
+  "versionCode": 5,
+  "minSdk": 26,
+  "targetSdk": 35,
+  "origin": {
+    "url": "https://raw.githubusercontent.com/zakgovin/GreekReadingApp/5b4b38c315ce8a82aa13e095398d351a8b160b43/GreekReadingApp.apk",
+    "commit": "5b4b38c315ce8a82aa13e095398d351a8b160b43",
+    "tag": "android-5",
+    "sha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+    "size": 78298390,
+    "attachedApkCompared": false
+  },
+  "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
+  "tools": {
+    "apktool": {
+      "version": "3.0.3",
+      "url": "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar",
+      "sha256": "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423"
+    },
+    "jadx": {
+      "version": "1.5.6"
+    }
+  },
+  "originalBuild": {
+    "gradle": "8.11.1",
+    "androidGradlePlugin": "8.9.2",
+    "kotlin": "2.1.20",
+    "ksp": "2.1.20-1.0.32",
+    "composeBom": "2025.04.01",
+    "room": "2.7.1",
+    "mlkitTranslate": "17.0.3"
+  },
+  "javaFiles": 110,
+  "applicationSmaliClasses": 441,
+  "javaFilesNeedingReview": [
+    "reference/java/com/greekreading/app/ReaderViewModel.java",
+    "reference/java/com/greekreading/app/core/WordTranslationResolver.java",
+    "reference/java/com/greekreading/app/data/BookRepository.java",
+    "reference/java/com/greekreading/app/ui/ReaderScreenKt.java",
+    "reference/java/com/greekreading/app/ui/ReaderSurfaceKt.java",
+    "reference/java/com/greekreading/app/ui/ScreensKt.java"
+  ],
+  "runtimeDex": [
+    "classes.dex",
+    "classes6.dex",
+    "classes7.dex"
+  ]
+}

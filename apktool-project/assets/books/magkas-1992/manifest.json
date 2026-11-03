@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "id": "magkas-1992",
+  "contentVersion": "d4d463e12457d7e8",
+  "preparationStatus": "draft_needs_editorial_review",
+  "title": "Μάγκας",
+  "author": "Πηνελόπη Δέλτα",
+  "language": "el",
+  "editionYear": 1992,
+  "cover": {
+    "path": "cover.jpg",
+    "width": 952,
+    "height": 1348,
+    "sha256": "7dc4eeab6184850c50da4d085f15bf94cca81eb2502acd5714b77a25b80a36b0"
+  },
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "Πρώτες μου απορίες",
+      "path": "chapters/01.json",
+      "sha256": "1cadceb1e0e4b3c029a331be615554777afad037fe0ce2998e6a3b966a838c9a",
+      "paragraphCount": 28
+    },
+    {
+      "id": "ch02",
+      "title": "Άσπρα κουρέλια και μαύρα ποδάρια",
+      "path": "chapters/02.json",
+      "sha256": "75c326749c0f4e220a065d40d4a875635f8299ecaf675086cebe70f9d8656d4e",
+      "paragraphCount": 53
+    },
+    {
+      "id": "ch03",
+      "title": "Ο φίλος μου ο Μπόμπης",
+      "path": "chapters/03.json",
+      "sha256": "1681babe1649406afa257c331c4bec973c1beafa1157d801beb993914313e670",
+      "paragraphCount": 67
+    },
+    {
+      "id": "ch04",
+      "title": "Χιώτικο νοικοκυριό",
+      "path": "chapters/04.json",
+      "sha256": "e790c8dbb6abdac53b302dab5f11abaa051cfdea655880a04e94dc7070dd0962",
+      "paragraphCount": 52
+    },
+    {
+      "id": "ch05",
+      "title": "Άδοξο κυνήγι",
+      "path": "chapters/05.json",
+      "sha256": "afbe8194c043f2f0c2f8447b44549e2caa1a963bab5ecf4a0c41fd77adf79db7",
+      "paragraphCount": 90
+    },
+    {
+      "id": "ch06",
+      "title": "Το σπίτι μας",
+      "path": "chapters/06.json",
+      "sha256": "f466565c8c331c4b8bf9b93d166201cac4a9fa45876543dd65bb8306e5dd6164",
+      "paragraphCount": 160
+    },
+    {
+      "id": "ch07",
+      "title": "Πρώτη νίκη",
+      "path": "chapters/07.json",
+      "sha256": "4f8d9cf6f26225195374224a00e8d21f39c3f613e6c53d5d6b9afa8752e76feb",
+      "paragraphCount": 53
+    },
+    {
+      "id": "ch08",
+      "title": "Αστέρω και Κεχαγιάς",
+      "path": "chapters/08.json",
+      "sha256": "58440d4612df86247cb30a5bc6434a3ce91e0f9d1f33543b29f306c6c05b10a7",
+      "paragraphCount": 72
+    },
+    {
+      "id": "ch09",
+      "title": "Βασίλης",
+      "path": "chapters/09.json",
+      "sha256": "82916d5b12c2be9732da2ecc708403a14cc80175d2cbb7ab8d31699f52a9f398",
+      "paragraphCount": 153
+    },
+    {
+      "id": "ch10",
+      "title": "Η Γιαγιά",
+      "path": "chapters/10.json",
+      "sha256": "d0d20e5a6ca73ca5d6c9ef2b04adfbeba4eb409954dc128c3ca9be6b855075a4",
+      "paragraphCount": 154
+    },
+    {
+      "id": "ch11",
+      "title": "Η ποντικοφωλιά",
+      "path": "chapters/11.json",
+      "sha256": "186ac4fdaeaf4558d233225ea988b7dbf86ce079dfbfbb3900741d4678e7e3ff",
+      "paragraphCount": 94
+    },
+    {
+      "id": "ch12",
+      "title": "Οι κουρμάδες",
+      "path": "chapters/12.json",
+      "sha256": "1a42ae3549a91eacf3df74ba676079f0aceb2a352d5209f1c29fd5c04575fa75",
+      "paragraphCount": 177
+    },
+    {
+      "id": "ch13",
+      "title": "Η πολυθρόνα",
+      "path": "chapters/13.json",
+      "sha256": "66fbcd49e9dac9575e40fbd3808bece788ceab92ea891a08fa0d349bb2443c44",
+      "paragraphCount": 189
+    },
+    {
+      "id": "ch14",
+      "title": "Ο καπετάν - Μανόλης",
+      "path": "chapters/14.json",
+      "sha256": "ea13521042b069427aace55c2297cdc0ef347deff59e03688ff9bac9c602a34c",
+      "paragraphCount": 68
+    },
+    {
+      "id": "ch15",
+      "title": "Μεσολόγγι",
+      "path": "chapters/15.json",
+      "sha256": "264fe2974ab803f785e626fdea9e1da629cab58c35db47ffff9207b5e2048499",
+      "paragraphCount": 70
+    },
+    {
+      "id": "ch16",
+      "title": "Ψαρά",
+      "path": "chapters/16.json",
+      "sha256": "d759daccab279e7cd7cb27d7250d32270cfba154ebbad73d8b1f8b6bc45c332d",
+      "paragraphCount": 80
+    },
+    {
+      "id": "ch17",
+      "title": "Η φυγή",
+      "path": "chapters/17.json",
+      "sha256": "c1de9388fe37f9435eb8a5c0ce1b27ea7e9ac286c87cf1d03dd67678712193d8",
+      "paragraphCount": 169
+    },
+    {
+      "id": "ch18",
+      "title": "Αιχμαλωσία",
+      "path": "chapters/18.json",
+      "sha256": "bcb37277842e142011d8e04f0bd4e8daa5d7b8aea5f5e51f6aa50a3da6b79a0c",
+      "paragraphCount": 103
+    },
+    {
+      "id": "ch19",
+      "title": "Αφράτος",
+      "path": "chapters/19.json",
+      "sha256": "405955ceacffdc84fcd6957cdd90253274682a61893fdcef48992cb06106b62d",
+      "paragraphCount": 124
+    },
+    {
+      "id": "ch20",
+      "title": "Ελευθερία και απογοήτευση",
+      "path": "chapters/20.json",
+      "sha256": "8e77f82e2bc72dd1f767473211166295ce9e597c1ba534af2ef6cd5ce8a113c8",
+      "paragraphCount": 114
+    },
+    {
+      "id": "ch21",
+      "title": "Η επιστροφή",
+      "path": "chapters/21.json",
+      "sha256": "213b7667d641bfe133eacc4c7572a85c9b83a0f026371250c95705f619893304",
+      "paragraphCount": 104
+    },
+    {
+      "id": "ch22",
+      "title": "Οι γνώσεις του Αφράτου",
+      "path": "chapters/22.json",
+      "sha256": "8a5279830f28ba82bdb35e6a086dce0ca64f7cbb070c7dbe007c036e8b8d6e7e",
+      "paragraphCount": 115
+    },
+    {
+      "id": "ch23",
+      "title": "Σωκράτης",
+      "path": "chapters/23.json",
+      "sha256": "82cf880ac18837afe1bd11a0eff470caea594f5aece4b423ee5d4a38a946790f",
+      "paragraphCount": 96
+    },
+    {
+      "id": "ch24",
+      "title": "Αναποδιές",
+      "path": "chapters/24.json",
+      "sha256": "6080d98a5c57ccfb2a8b07e750022a2f18c7dd336ff8b748b768306354fc1f74",
+      "paragraphCount": 212
+    },
+    {
+      "id": "ch25",
+      "title": "Το μυστικό του Βασίλη",
+      "path": "chapters/25.json",
+      "sha256": "f8df5b29cde5a90aa402983d7d62e62b0c09a9e4f3e16c8f92c8e6936832ad1e",
+      "paragraphCount": 218
+    },
+    {
+      "id": "ch26",
+      "title": "Μίκης Ζέζας",
+      "path": "chapters/26.json",
+      "sha256": "3e9f01d87a1794f3b4ccd86479ad9a8fc604fbf87554cceffb8b9c887ef149ee",
+      "paragraphCount": 66
+    },
+    {
+      "id": "ch27",
+      "title": "Ο Πρωτομάρτυρας",
+      "path": "chapters/27.json",
+      "sha256": "5e3ba478a61a24892af63f35036181a28cb535de3cfe3f1216ce3cb407740881",
+      "paragraphCount": 121
+    },
+    {
+      "id": "ch28",
+      "title": "Προς τον αγώνα",
+      "path": "chapters/28.json",
+      "sha256": "37bcac1b60ae30a565969371fbddd7c778ec2bd2b8f9aced31df9dae6b234675",
+      "paragraphCount": 111
+    }
+  ]
+}

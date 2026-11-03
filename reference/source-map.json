@@ -1,0 +1,552 @@
+[
+  {
+    "path": "reference/java/com/greekreading/app/AppContainer.java",
+    "originalSource": "GreekReaderApplication.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/AppState.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/BuildConfig.java",
+    "originalSource": null,
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/GreekReaderApplication.java",
+    "originalSource": "GreekReaderApplication.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/MainActivity$special$$inlined$viewModels$default$1.java",
+    "originalSource": "ActivityViewModelLazy.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/MainActivity.java",
+    "originalSource": "MainActivity.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/MainActivityKt$ReaderApplication$1$1.java",
+    "originalSource": "MainActivity.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/MainActivityKt$ReaderApplication$3$1$1$2.java",
+    "originalSource": "MainActivity.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/MainActivityKt.java",
+    "originalSource": "MainActivity.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/R.java",
+    "originalSource": null,
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ReaderSheet.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ReaderViewModel$requestTranslation$1$resolver$1.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ReaderViewModel$requestTranslation$1$resolver$2.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ReaderViewModel$requestTranslation$1$result$1.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ReaderViewModel$translateSentence$1$result$1.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ReaderViewModel.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": true
+  },
+  {
+    "path": "reference/java/com/greekreading/app/Screen.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/TranslationState.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/TranslationStatus.java",
+    "originalSource": "ReaderViewModel.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/AlignedPassage.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/Chapter.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/ChapterDocument.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/DocumentBlock.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/Footnote.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/GreekSentences.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/GreekWords.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiteraryIndex.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiteraryLookup.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiteraryParagraph.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiteraryReference.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiterarySource.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiterarySources.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiteraryStatus.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/LiteraryTarget.java",
+    "originalSource": "LiteraryReferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/Locator.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/MeasuredLine.java",
+    "originalSource": "ReadingInput.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/PageBreaker.java",
+    "originalSource": "ReadingInput.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/PageSpan.java",
+    "originalSource": "ReadingInput.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/Paragraph.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/ReadingAction.java",
+    "originalSource": "ReadingInput.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/ReadingGesture.java",
+    "originalSource": "ReadingInput.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/TextKeys.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/TextRange.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/TextSearch.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/TranslationAnswers.java",
+    "originalSource": "WordTranslations.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/UnicodeOffsets.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/WordSelection.java",
+    "originalSource": "ReadingText.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/WordTranslationMethod.java",
+    "originalSource": "WordTranslations.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/WordTranslationResolver$resolve$attempt$1.java",
+    "originalSource": "WordTranslations.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/WordTranslationResolver.java",
+    "originalSource": "WordTranslations.kt",
+    "needsManualReview": true
+  },
+  {
+    "path": "reference/java/com/greekreading/app/core/WordTranslationResult.java",
+    "originalSource": "WordTranslations.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/AppDatabase.java",
+    "originalSource": "AppDatabase.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/AppDatabase_Impl.java",
+    "originalSource": "AppDatabase_Impl.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/BookInfo.java",
+    "originalSource": "BookRepository.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/BookRepository.java",
+    "originalSource": "BookRepository.kt",
+    "needsManualReview": true
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/Bookmark.java",
+    "originalSource": "AppDatabase.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/CachedTranslation.java",
+    "originalSource": "AppDatabase.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/GreekWordForms.java",
+    "originalSource": "GreekWordForms.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/LiteraryReferenceRepository.java",
+    "originalSource": "LiteraryReferenceRepository.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/MlKitTranslationEngine.java",
+    "originalSource": "TranslationEngine.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/Preferences.java",
+    "originalSource": "Preferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/PreferencesKt.java",
+    "originalSource": "Preferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/ReaderSettings.java",
+    "originalSource": "Preferences.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/ReadingDao.java",
+    "originalSource": "AppDatabase.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/ReadingDao_Impl.java",
+    "originalSource": "ReadingDao_Impl.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/ReadingProgress.java",
+    "originalSource": "AppDatabase.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/SavedWord.java",
+    "originalSource": "AppDatabase.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/SearchHit.java",
+    "originalSource": "BookRepository.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/data/TranslationEngine.java",
+    "originalSource": "TranslationEngine.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ComponentsKt.java",
+    "originalSource": "Components.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ComposableSingletons$ComponentsKt.java",
+    "originalSource": "Components.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ComposableSingletons$ReaderScreenKt.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ComposableSingletons$ScreensKt.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ConsentPanel$3$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$LiteraryPanel$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3$4$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3$5$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3$5$2$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3$5$2$2$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$4$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$5$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$ReaderScreen$6$invoke$lambda$3$lambda$2$$inlined$items$default$2.java",
+    "originalSource": "LazyDsl.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$SheetHeading$1$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$TranslationPanel$1$1$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$TranslationPanel$1$3$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$TranslationPanel$1$4$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$TranslationPanel$1$8$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt$TranslationPanel$1$9$1.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderScreenKt.java",
+    "originalSource": "ReaderScreen.kt",
+    "needsManualReview": true
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderSurfaceKt$ReaderSurface$1$1$1.java",
+    "originalSource": "ReaderSurface.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderSurfaceKt$ReaderSurface$1$2$1.java",
+    "originalSource": "ReaderSurface.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderSurfaceKt$ReaderSurface$1$3$2$1$1$event$1.java",
+    "originalSource": "ReaderSurface.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ReaderSurfaceKt.java",
+    "originalSource": "ReaderSurface.kt",
+    "needsManualReview": true
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$ContentsScreen$1$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$ContentsScreen$1$2$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$ContentsScreen$lambda$46$lambda$45$lambda$44$$inlined$items$default$2.java",
+    "originalSource": "LazyDsl.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$LibraryScreen$1$1$2.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$SearchScreen$1$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$SearchScreen$1$2$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$SettingsScreen$1$1$1$4$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$SettingsScreen$1$1$1$6$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$SettingsScreen$1$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$VocabularyScreen$1$1$1$2$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$VocabularyScreen$1$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$WordScreen$1$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$WordScreen$1$2.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt$WordScreen$1$3$1$1.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": false
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ScreensKt.java",
+    "originalSource": "Screens.kt",
+    "needsManualReview": true
+  },
+  {
+    "path": "reference/java/com/greekreading/app/ui/ThemeKt.java",
+    "originalSource": "Theme.kt",
+    "needsManualReview": false
+  }
+]
