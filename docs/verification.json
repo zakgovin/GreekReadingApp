@@ -1,0 +1,60 @@
+{
+  "originalSha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+  "rebuilt": {
+    "apk": "GreekReadingApp-recovered.apk",
+    "sha256": "07b16e99cbcbe4adbe4fdf697200d1bc582f51c3c776689db2f81bad1e3fac7e",
+    "originSha256": "9a260787bcef788b900d0d1123e150206198eb5532e02910874edc1f56020263",
+    "signerCertificateSha256": "3309e62891cec6a4b9d716d567fc503f25472c35fd583a33762bdac782ce2eb7",
+    "signatureVerified": true,
+    "alignment16KiBVerified": true,
+    "deviceLaunchTested": false
+  },
+  "content": {
+    "chapters": 28,
+    "greekParagraphs": 3113,
+    "russianParagraphs": 790,
+    "alignedPassages": 787,
+    "wordForms": 3643,
+    "errors": 0
+  },
+  "smali": {
+    "classes": 654,
+    "missing": [],
+    "different": []
+  },
+  "resources": {
+    "resourceIdsAndNamesPreserved": true,
+    "resourceValueEntries": 12985,
+    "resourceValuesEquivalent": true,
+    "differentValues": 0,
+    "normalizations": [
+      "String pool indexes",
+      "PUBLIC flag",
+      "String UTF-8/UTF-16 storage",
+      "Resource bag order by key",
+      "Redundant file path version qualifiers <= minSdk 26"
+    ]
+  },
+  "unchangedBinaryEntries": {
+    "compared": 51,
+    "changed": []
+  },
+  "database": {
+    "version": 1,
+    "tables": [
+      "progress",
+      "words",
+      "translations",
+      "bookmarks"
+    ],
+    "identityHash": "65df098d3c05f2d7b594e082b3147418",
+    "schemaValidatedWithSqlite": true
+  },
+  "deviceLaunchTested": false,
+  "attachedApkCompared": false,
+  "portableArchive": {
+    "unpackedInFreshDirectory": true,
+    "runtimeRestoredFromOriginalApk": true,
+    "unsignedBuildPassed": true
+  }
+}

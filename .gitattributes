@@ -1,0 +1,4 @@
+# Preserve the extracted metadata and decompiler output exactly.
+apktool-project/unknown/** -text -whitespace
+reference/java/** -whitespace
+reference/build-config/app.gradle.kts -whitespace

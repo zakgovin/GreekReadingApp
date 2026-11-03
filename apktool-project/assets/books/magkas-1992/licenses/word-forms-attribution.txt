@@ -1,0 +1,8 @@
+Greek word-form data: UniMorph ell contributors, source Wikipedia, CC BY-SA 3.0.
+https://github.com/unimorph/ell
+https://creativecommons.org/licenses/by-sa/3.0/
+This is a modified subset of observed single-word forms, with optional variants expanded.
+Greek exceptions: ExplosionAI spaCy lookups data, MIT; permission notice included.
+https://github.com/explosion/spacy-lookups-data
+A small set of recorded historical forms from the supplied book is listed in greek-form-overrides.json.
+These are dictionary-form candidates, not context disambiguation or Russian translations.

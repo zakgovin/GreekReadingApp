@@ -1,0 +1,9 @@
+{
+  "kotlin": "2.1.20",
+  "composeCompiler": "2.1.20",
+  "minApi": 26,
+  "sourceSha256": "7a42fb1fb74f7f44892bb72c28986d758726481f57f1e2e8196e46f873bdfe9f",
+  "classes": 31,
+  "apiStubsPackaged": false,
+  "smaliSha256": "2f52af26453e0412271db1902615f0bdedcaa9722918d9568c51ac97ca4f3180"
+}

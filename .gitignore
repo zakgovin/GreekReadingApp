@@ -1,0 +1,13 @@
+/.cache/
+/build/
+/dist/
+/apktool-project/build/
+/apktool-project/dist/
+/apktool-project/lib/
+/apktool-project/classes.dex
+/apktool-project/classes6.dex
+/apktool-project/classes7.dex
+*.keystore
+*.jks
+*.idsig
+__pycache__/

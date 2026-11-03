@@ -1,0 +1,21 @@
+{
+  "versionName": "0.1.6",
+  "versionCode": 7,
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "defaultAbi": "arm64-v8a",
+  "translationModels": {
+    "languages": [
+      "el",
+      "ru"
+    ],
+    "bundled": false,
+    "download": "explicit-user-action",
+    "requiredForReading": false,
+    "requiredForLiteraryTranslation": false
+  }
+}
