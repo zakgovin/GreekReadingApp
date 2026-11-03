@@ -1,26 +1,30 @@
 # Греческая читалка
 
-Текущая сборка **0.1.5 / versionCode 6** выпускается отдельными APK для каждой
+Текущая сборка **0.1.6 / versionCode 7** выпускается отдельными APK для каждой
 архитектуры. Языковые модели перевода докачиваются по кнопке; книгу и литературный
 русский перевод можно читать без загрузки моделей.
+
+Карточка слова открывается в компактном виде: только перевод. Потяните её вверх,
+чтобы открыть дополнительные действия. Исходное греческое предложение остаётся
+в книге. [Описание и снимки экрана](docs/COMPACT_TRANSLATION.md).
 
 ## Скачать приложение
 
 | Устройство | APK | Размер |
 | --- | --- | ---: |
-| Современный телефон с 64-битным Android на ARM | [ARM64](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-arm64-v8a.apk) | 30,59 МБ |
-| Телефон с 32-битным Android на ARM | [ARM32](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-armeabi-v7a.apk) | 25,84 МБ |
-| Эмулятор или Android на x86 | [x86](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-x86.apk) | 31,49 МБ |
-| Эмулятор или Android на x86_64 | [x86_64](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/9fc28de79d59af8fb42864228dcb99d35116b3a4/releases/0.1.5/GreekReadingApp-0.1.5-x86_64.apk) | 31,61 МБ |
+| Современный телефон с 64-битным Android на ARM | [ARM64](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/013af9ada37a2fd1aded7c9ea100bb39ef6b9147/releases/0.1.6/GreekReadingApp-0.1.6-arm64-v8a.apk) | 30,61 МБ |
+| Телефон с 32-битным Android на ARM | [ARM32](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/013af9ada37a2fd1aded7c9ea100bb39ef6b9147/releases/0.1.6/GreekReadingApp-0.1.6-armeabi-v7a.apk) | 25,85 МБ |
+| Эмулятор или Android на x86 | [x86](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/013af9ada37a2fd1aded7c9ea100bb39ef6b9147/releases/0.1.6/GreekReadingApp-0.1.6-x86.apk) | 31,51 МБ |
+| Эмулятор или Android на x86_64 | [x86_64](https://raw.githubusercontent.com/zakgovin/GreekReadingApp/013af9ada37a2fd1aded7c9ea100bb39ef6b9147/releases/0.1.6/GreekReadingApp-0.1.6-x86_64.apk) | 31,62 МБ |
 
 Для большинства современных телефонов подходит ARM64. Если телефон использует
 32-битный Android, выбирайте ARM32. Размеры указаны в десятичных МБ.
-Все варианты подписаны прежним ключом и обновляют совместимую установку 0.1.4
+Все варианты подписаны прежним ключом и обновляют совместимую установку 0.1.4 или 0.1.5
 без удаления приложения. Полный список файлов и SHA-256 — в
-[выпуске android-6](https://github.com/zakgovin/GreekReadingApp/releases/tag/android-6).
+[выпуске android-7](https://github.com/zakgovin/GreekReadingApp/releases/tag/android-7).
 
-Для включения автоматического перевода нажмите «Скачать модели» в карточке
-слова или в настройках. Потребуется интернет и несколько десятков
+Для включения автоматического перевода разверните карточку слова движением вверх
+и нажмите «Скачать модели»; эта кнопка также есть в настройках. Потребуется интернет и несколько десятков
 МБ дополнительно. Во время загрузки можно продолжать читать. После загрузки
 перевод работает офлайн; повторно скачиваются только отсутствующие модели.
 
@@ -45,6 +49,8 @@ commit `5b4b38c315ce8a82aa13e095398d351a8b160b43`, тег `android-5`.
 | `apktool-project/smali_classes2` … `smali_classes5` | Собираемый код: 441 класс приложения и 213 классов зависимостей из смешанного DEX |
 | `apktool-project/res` | Иконки, шрифты, цвета, строки и остальные Android-ресурсы |
 | `apktool-project/assets/books/magkas-1992` | 28 глав, обложка, словоформы и сопоставленный русский фрагмент |
+| `ui-src/CompactWordSheet.kt` | Редактируемый Kotlin/Compose-исходник компактной карточки перевода |
+| `ui-src/README.md` | Перекомпиляция компонента и назначение compile-only ABI-заглушек |
 | `reference/java` | 110 Java-файлов JADX для чтения и восстановления Kotlin |
 | `reference/source-map.json` | Карта файлов и имён прежних Kotlin-исходников |
 | `reference/build-config` | Тело прежнего Gradle-конфига и версии плагинов из сохранившегося кэша |
@@ -92,7 +98,7 @@ python3 scripts/project.py build-all \
   --keystore /private/path/to/debug.keystore
 ```
 
-Результат: четыре файла `dist/GreekReadingApp-0.1.5-<архитектура>.apk`,
+Результат: четыре файла `dist/GreekReadingApp-0.1.6-<архитектура>.apk`,
 `dist/manifest.json`, отчёты по вариантам и `dist/SHA256SUMS`.
 Команда `build` собирает один вариант, по умолчанию ARM64; `build-all` — все четыре.
 Проверки упаковки запускаются командой:
@@ -118,7 +124,7 @@ python3 -m unittest discover -s scripts -p test_abi_packaging.py -v
 - Подпись APK корректна, сертификат прежний, выравнивание native-библиотек 16 КиБ проверено.
 - Данные книги и диапазоны сопоставлений проверены: ошибок нет.
 
-Эти проверки относятся к исходному восстановлению 0.1.4. Проверки версии 0.1.5
+Эти проверки относятся к исходному восстановлению 0.1.4. Проверки версии 0.1.6
 и её APK по архитектурам описаны в `docs/DELIVERY.md`.
 Содержимое телефона — личный словарь и прогресс чтения — не входит в APK
 и из установочного файла не восстанавливается.

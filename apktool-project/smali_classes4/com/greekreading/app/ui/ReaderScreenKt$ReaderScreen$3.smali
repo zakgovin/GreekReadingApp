@@ -4452,6 +4452,28 @@
 
     if-eq v3, v4, :cond_31
 
+    # Compact translation sheet; other panels retain their original implementation.
+    sget-object v4, Lcom/greekreading/app/ReaderSheet;->Translation:Lcom/greekreading/app/ReaderSheet;
+    if-eq v3, v4, :compact_word_sheet
+    sget-object v4, Lcom/greekreading/app/ReaderSheet;->Consent:Lcom/greekreading/app/ReaderSheet;
+    if-ne v3, v4, :legacy_reader_sheet
+    :compact_word_sheet
+    move-object/from16 v20, p1
+    iget-object v3, v0, Lcom/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3;->$state:Lcom/greekreading/app/AppState;
+    move-object/from16 v21, v3
+    iget-object v3, v0, Lcom/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3;->$model:Lcom/greekreading/app/ReaderViewModel;
+    move-object/from16 v22, v3
+    iget-object v3, v0, Lcom/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3;->$overlayHeight$delegate:Landroidx/compose/runtime/MutableIntState;
+    move-object/from16 v23, v3
+    iget-object v3, v0, Lcom/greekreading/app/ui/ReaderScreenKt$ReaderScreen$3;->$sheetBounds$delegate:Landroidx/compose/runtime/MutableState;
+    move-object/from16 v24, v3
+    move/from16 v25, v2
+    move-object/from16 v26, p2
+    const/16 v27, 0x0
+    invoke-static/range {v20 .. v27}, Lcom/greekreading/app/ui/compact/CompactWordSheetKt;->CompactWordSheet(Landroidx/compose/foundation/layout/BoxWithConstraintsScope;Lcom/greekreading/app/AppState;Lcom/greekreading/app/ReaderViewModel;Landroidx/compose/runtime/MutableIntState;Landroidx/compose/runtime/MutableState;FLandroidx/compose/runtime/Composer;I)V
+    goto/16 :cond_31
+    :legacy_reader_sheet
+
     .line 100
     sget-object v3, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 

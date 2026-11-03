@@ -142,6 +142,15 @@ def validation() -> dict:
                     f"Russian fragment checksum: {target['paragraphId']}")
     forms = json.loads((base / "word-forms.json").read_text(encoding="utf-8"))
     require(forms["contentVersion"] == manifest["contentVersion"], "Word form content version")
+    ui = json.loads((ROOT / "ui-src/compiled.json").read_text(encoding="utf-8"))
+    require(digest(ROOT / "ui-src/CompactWordSheet.kt") == ui["sourceSha256"],
+            "Compact UI source changed; run scripts/compile_compact_ui.py")
+    smali_hash = hashlib.sha256()
+    ui_files = sorted((PROJECT / "smali_classes4/com/greekreading/app/ui/compact").glob("*.smali"))
+    for path in ui_files:
+        smali_hash.update(path.name.encode() + b"\0" + path.read_bytes())
+    require(len(ui_files) == ui["classes"] and smali_hash.hexdigest() == ui["smaliSha256"],
+            "Compact UI compiled files differ from compiled.json")
     result = {
         "chapters": len(counts), "greekParagraphs": sum(counts),
         "russianParagraphs": len(russian), "alignedPassages": len(literary["passages"]),
